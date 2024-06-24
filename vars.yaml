@@ -1,0 +1,38 @@
+ansible_python_interpreter: /bin/python3
+
+student_ID: "R2-S08"
+
+vcenter_hostname: "192.168.3.10"
+vcenter_username: "S08@vclass.reca2"
+vcenter_password: "VMware1!"
+
+datacenter_name: "Datacenter"
+
+folder_prefix: "Datacenter/vm/3.Students/"
+
+# S01, S06, S11, S16, S21 --> esxi_host : 192.168.3.11
+# S02, S07, S12, S17, S22 --> esxi_host : 192.168.3.12
+# S03, S08, S13, S18, S23 --> esxi_host : 192.168.3.13
+# S04, S09, S14, S19, S24 --> esxi_host : 192.168.3.14
+# S00, S05, S10, S15, S20 --> esxi_host : 192.168.3.15
+
+esxi_hostname: "esxi-03.vclass.reca2"
+esxi_password: "VMware1!"
+esxi_username: "root"
+
+public_net: "VM-192.168.3.x"
+private_net: "{{ student_ID + '-Trunk' }}"
+
+datastore_name: "ESXi-03"
+
+dc_template_name: "S08-Template-Win"
+dc_snapshot_src_name: "RECA#2"
+
+esxi_template_name: "Temp-ESXi-03"
+
+sa_esxi_template_name: "Temp-ESXi-03"
+
+vcsa_template_name: "Temp-VCSA-ESXi-03"
+vcsa_snapshot_src_name: "Installed"
+
+sb_esxi_template_name: "Temp-SB-ESXi-03"
